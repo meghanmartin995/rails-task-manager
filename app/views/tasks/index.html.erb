@@ -1,0 +1,27 @@
+<h1>My Tasks</h1>
+
+<% @tasks.each do |task| %>
+  <% if task.completed == true %>
+  <h2>✓ <%= link_to task.title, displaytask_path(task) %>  <%= link_to image_tag("trash.png", width: 30), task_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %> </h2>
+  <% else %>
+  <h2>☐ <%=  link_to task.title, displaytask_path(task) %>  <%= link_to image_tag("trash.png", width: 30), task_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %> </h2>
+  <% end %>
+<% end %>
+
+<h2><%= link_to "add new task", newtask_path %> </h2>
+
+
+
+
+
+
+
+
+
+
+
+
